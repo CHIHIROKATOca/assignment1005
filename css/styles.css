@@ -398,6 +398,11 @@ border: 5px solid #fa8c8c;
     object-fit: fill;
 }
 
+#replay{
+    margin-bottom: 15px;
+    background-color: #ffda48;
+    }
+
 @media(max-width:768px){
     .top-animation{
         display: none;
@@ -433,5 +438,18 @@ border: 5px solid #fa8c8c;
         #start-4{
             font-size: 13px;
             padding: 5px;
+        }
+        .container{
+            width: 250px;
+            margin: 100px auto 0;
+            background-color: white;
+            border-radius: 4px;
+            padding: 16px;
+            position: relative;
+            text-align: center;
+        }
+
+        #question{
+            font-size: 19px;
         }
 }
