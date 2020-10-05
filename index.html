@@ -15,36 +15,23 @@
         <!-- google icon -->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" href="https://use.typekit.net/ihf3pzv.css">
-        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
 
 </head>
 
-<body class="perfect-body-bg normal-bg">
-    <nav class="navbar navbar-light bg-light nav-select">
-        <a class="navbar-brand backtoselect" href="start.html"><span class="material-icons">
-            chevron_left
-            </span>Select stage</a>
-      </nav>
-    <div class="container perfect-bg" id="container">
-        <p id="question" class="question">What is a?</p>
-        <p id="count" class="count">count?</p>
-        <ul id="choices" class="choices">
-            <!-- <li>A01</li>
-            <li>A02</li>
-            <li>A03</li> -->
-        </ul>
-        <div id="btn" class="disabled">Next</div>
+<body class="top-bg">
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_zzc4welx.json"  background="transparent"  speed="1"      autoplay class="top-animation"></lottie-player>
+
+    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_dbnlgt2h.json"  background="transparent"  speed="1"  style="width: 100%; height: auto;" autoplay  class="top-animation-mobile"></lottie-player>
+
+    <div class="container-start" id="container-start">
+        <a href="index_easy.html" id="start-1">Easy</a>
+        <a href="index_normal.html" id="start-2">Normal</a>
+        <a href="index_hard.html" id="start-3">Hard</a>
+        <a href="index_expart.html" id="start-4">Expart</a>
     </div>
-
-    <div class="bg-brack">
-    <section id="result" class="hidden">
-        <p></p>
-        <a href="">Replay?</a>
-    </section>
-
 </div>
-
     <script src="js/main.js" defer></script>
 </body>
 </html>

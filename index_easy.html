@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="css/styles.css">
+        <!-- Jquery -->
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous"></script>
+        <!-- google font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+        <!-- google icon -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/ihf3pzv.css">
+        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+
+</head>
+
+<body class="perfect-body-bg normal-bg">
+    <nav class="navbar navbar-light bg-light nav-select">
+        <a class="navbar-brand backtoselect" href="start.html"><span class="material-icons">
+            chevron_left
+            </span>Select stage</a>
+      </nav>
+    <div class="container perfect-bg" id="container">
+        <p id="question" class="question">What is a?</p>
+        <p id="count" class="count">count?</p>
+        <ul id="choices" class="choices">
+            <!-- <li>A01</li>
+            <li>A02</li>
+            <li>A03</li> -->
+        </ul>
+        <div id="btn" class="disabled">Next</div>
+    </div>
+
+    <div class="bg-brack">
+    <section id="result" class="hidden">
+        <p></p>
+        <a href="">Replay?</a>
+    </section>
+
+</div>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>
