@@ -354,11 +354,14 @@ border: 5px solid #fa8c8c;
 .container-start{
     width: 280px;
     height: 320px;
-    margin: 200px auto;
+    margin: 0px auto;
     /* background-color: white; */
     border-radius: 4px;
     padding: 16px;
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 
 }
@@ -412,13 +415,16 @@ border: 5px solid #fa8c8c;
 
 @media(max-width:550px){
     .container-start{
-        width: 230px;
-        height: 280px;
-        margin: 200px auto;
+        width: 280px;
+        height: 320px;
+        margin: 0px auto;
         /* background-color: white; */
         border-radius: 4px;
         padding: 16px;
-        position: relative;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
         }
         #start-1,
