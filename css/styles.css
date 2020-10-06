@@ -415,6 +415,9 @@ border: 5px solid #fa8c8c;
         transition: 0s;
     }
 
+    .normal-bg{
+        background-image: url("../images/bg_normal.png");
+    }
 
 }
 
