@@ -20,18 +20,41 @@
 
 <body class="top-bg">
 
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_zzc4welx.json"  background="transparent"  speed="1"      autoplay class="top-animation"></lottie-player>
+    <audio id="overSound" preload="auto">
+        <source src="audio/decision29.mp3" type="audio/mp3">
+        <p>※お使いのブラウザはHTML5のaudio要素をサポートしていないので音は鳴りません。</p>
+    </audio>
 
-    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_dbnlgt2h.json"  background="transparent"  speed="1"  style="width: 100%; height: auto;" autoplay  class="top-animation-mobile"></lottie-player>
+    <!-- <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets5.lottiefiles.com/packages/lf20_vpwp8ul0.json"  background="transparent"  speed="1" autoplay class="top-animation"></lottie-player>
+
+    <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_dbnlgt2h.json"  background="transparent"  speed="1"  style="width: 100%; height: auto;" autoplay  class="top-animation-mobile"></lottie-player> -->
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_if0o2rdt.json"  background="transparent"  speed="1" autoplay class="top-animation"></lottie-player>
+
+    <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_vsbcg0mg.json"  background="transparent"  speed="1"  style="width: 100%; height: auto;" autoplay  class="top-animation-mobile"></lottie-player>
 
     <div class="container-start" id="container-start">
-        <a href="index_easy.html" id="start-1">Easy</a>
-        <a href="index_normal.html" id="start-2">Normal</a>
-        <a href="index_hard.html" id="start-3">Hard</a>
-        <a href="index_expart.html" id="start-4">Expart</a>
+
+        <a href="index_easy.html" id="start-1" class="appButton">Easy</a>
+        <a href="index_normal.html" id="start-2" class="appButton">Normal</a>
+        <a href="index_hard.html" id="start-3" class="appButton">Hard</a>
+        <a href="index_expart.html" id="start-4" class="appButton">Expart</a>
     </div>
 </div>
-    <script src="js/main.js" defer></script>
+<script>
+    $(function(){
+
+    //音を鳴らす
+    $('.appButton').mouseover(function(){
+
+     document.getElementById("overSound").currentTime = 0;
+     document.getElementById("overSound").play();
+    });
+
+    });
+</script>
+
 </body>
 </html>

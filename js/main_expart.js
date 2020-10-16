@@ -1,21 +1,22 @@
 "use strict";
 
 {
-    const question = document.getElementById("question");
-    const choices = document.getElementById("choices");
-    const btn = document.getElementById("btn");
-    const result = document.getElementById("result");
-    const scorelabel = document.querySelector("#result > p");
-    const anime = document.getElementById("anime");
-    const count = document.getElementById("count");
+  const question = document.getElementById("question");
+  const choices = document.getElementById("choices");
+  const btn = document.getElementById("btn");
+  const result = document.getElementById("result");
+  const scorelabel = document.querySelector("#result-score");
+  const anime = document.getElementById("anime");
+  const count = document.getElementById("count");
+  const goNext = document.getElementById("replay");
 
-    const quizSet =shuffle([
-      {q: "Which quintessentially Japanese dish actually originates from Portugal?" , c : ["Tempura","Sushi","Okonomiyaki"]},
-      {q: "What is the population of Japan" , c : ["126 million","89 million","50 million"]},
-      {q: 'Male ninja are called "ninja", but what are they called female ninja?' , c : ["Kunoichi","Onna ninjya","Geisya"]},
-      {q: 'What type of food is "Napolitan"?' , c : ["A pasta dish made by first sauteing meat and vegetables","Fried rice with ingredients","Raw fish on vinegared rice"]},
-      {q: "When does Japanese say “Otsukaresama?" , c : ["When the work is done","When want to apologize","When have to go to the bathroom"]},
-    ]);
+  const quizSet =shuffle([
+    {q: '"Gohan wa nandaro na?"', c : ["I wonder what the dish is today","Would you like to play with me?","Don't you bully me?"]},
+    {q: '"Kaere...omae mijyuku sugida!"' , c : ["Go away...You're too immature!","You are strong...but I am more!","I can't belive...you are fighter!"]},
+    {q: '"Washi no mai wo misete yaruwa!"', c : ["I will show you my dance!","Go to hell!","Have fun! I will show you future"]},
+    {q: '"Ore no tsuyosa wa tenkaichi!"' , c : ["I am strongest in the world!","You are the second best in the world!","let show me your skill more!"]},
+    {q: '"Ore wa mada manzoku shite naize!" mean?' , c : ["I'm still not satisfied","Show me what you can do! ","You are strong!"]},
+]);
 
     let currentNum = 0;
     let isAnswered;
@@ -79,16 +80,16 @@
     setQuiz();
 
     function countNum(){
-      count.textContent = `Question: 1 / ${quizSet.length}`;
+      count.textContent = `What does it mean?: 1 / ${quizSet.length}`;
     }
     countNum();
 
     btn.addEventListener("click", ()=>{
       function countNum(){
       if(btn.classList.contains("disabled")){
-      count.textContent = `Question: ${currentNum + 1} / ${quizSet.length}`;
+      count.textContent = `What does it mean?: ${currentNum + 1} / ${quizSet.length}`;
       }else{
-        count.textContent = `Question: ${currentNum + 2} / ${quizSet.length}`;
+        count.textContent = `What does it mean?: ${currentNum + 2} / ${quizSet.length}`;
       }
       }
       countNum();
@@ -108,13 +109,34 @@
       }
 
       if(score === quizSet.length){
-       var tmp = document.getElementsByClassName("perfect-bg") ;
+        const perfectText = document.getElementById("perfectText");
+        perfectText.textContent = "Perfect!!";
+
+        var tmp = document.getElementsByClassName("perfect-bg") ;
         var val="perfect";
         tmp[0].setAttribute("id",val);
-        var tmp = document.getElementsByClassName("perfect-body-bg") ;
-        var val="perfect-bg-animation";
-        tmp[0].setAttribute("id",val);
-        anime.classList.remove("hidden");
+
+        var perfectBg = document.getElementById("perfect-animation");
+        perfectBg.style.display;
+        perfectBg.style.display = "block";
+
+        var perfectBgColor = document.querySelector(".perfect-body-bg");
+        perfectBgColor.style.backgroundColor;
+        perfectBgColor.style.backgroundColor = "#ffda48";
+
+        var normalBg = document.getElementById("normal-animation");
+        var normalBgT = document.getElementById("normal-animation-tablet");
+        var normalBgM = document.getElementById("normal-animation-mobile");
+        normalBg.style.display;
+        normalBgT.style.display;
+        normalBgM.style.display;
+        normalBg.style.display = "none";
+        normalBgT.style.display = "none";
+        normalBgM.style.display = "none";
+
+
+        goNext.innerText="Congratultion! Cleared All";
+        goNext.href = "index.html";
       }else{
         return;
       }

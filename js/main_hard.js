@@ -1,21 +1,23 @@
 "use strict";
 
 {
-    const question = document.getElementById("question");
-    const choices = document.getElementById("choices");
-    const btn = document.getElementById("btn");
-    const result = document.getElementById("result");
-    const scorelabel = document.querySelector("#result > p");
-    const anime = document.getElementById("anime");
-    const count = document.getElementById("count");
+  const question = document.getElementById("question");
+  const choices = document.getElementById("choices");
+  const btn = document.getElementById("btn");
+  const result = document.getElementById("result");
+  const scorelabel = document.querySelector("#result-score");
+  const anime = document.getElementById("anime");
+  const count = document.getElementById("count");
+  const goNext = document.getElementById("replay");
 
-    const quizSet =shuffle([
-        {q: "Which quintessentially Japanese dish actually originates from Portugal?" , c : ["Tempura","Sushi","Okonomiyaki"]},
-        {q: "What is the population of Japan" , c : ["126 million","89 million","50 million"]},
-        {q: 'Male ninja are called "ninja", but what are they called female ninja?' , c : ["Kunoichi","Onna ninjya","Geisya"]},
-        {q: 'What type of food is "Napolitan"?' , c : ["A pasta dish made by first sauteing meat and vegetables","Fried rice with ingredients","Raw fish on vinegared rice"]},
-        {q: "When does Japanese say “Otsukaresama?" , c : ["When the work is done","When want to apologize","When have to go to the bathroom"]},
-    ]);
+
+  const quizSet =shuffle([
+    {q: '"Honkide ikuyo!"', c : ["I'm going all out!","I'm going home!","I'm going to run!"]},
+    {q: '"Omae...orokamono"' , c : ["You are foolish","You are loser","You must die"]},
+    {q: '"Ninmu kanryo!"', c : ["Mission accomplished!","See you later!","I won't be seeing you again!"]},
+    {q: '"Mou...shindeyo"' , c : ["I hope you're dead","I hope you're escape","I don't wanna fight with you"]},
+    {q: '"Usero!"' , c : ["Get out of here!","I hate you!","Unforgivable!"]},
+]);
     let currentNum = 0;
     let isAnswered;
     let score = 0;
@@ -79,16 +81,16 @@
     setQuiz();
 
     function countNum(){
-      count.textContent = `Question: 1 / ${quizSet.length}`;
+      count.textContent = `What does it mean?: 1 / ${quizSet.length}`;
     }
     countNum();
 
     btn.addEventListener("click", ()=>{
       function countNum(){
       if(btn.classList.contains("disabled")){
-      count.textContent = `Question: ${currentNum + 1} / ${quizSet.length}`;
+      count.textContent = `What does it mean?: ${currentNum + 1} / ${quizSet.length}`;
       }else{
-        count.textContent = `Question: ${currentNum + 2} / ${quizSet.length}`;
+        count.textContent = `What does it mean?: ${currentNum + 2} / ${quizSet.length}`;
       }
       }
       countNum();
@@ -108,13 +110,33 @@
       }
 
       if(score === quizSet.length){
-       var tmp = document.getElementsByClassName("perfect-bg") ;
+        const perfectText = document.getElementById("perfectText");
+        perfectText.textContent = "Perfect!!";
+
+        var tmp = document.getElementsByClassName("perfect-bg") ;
         var val="perfect";
         tmp[0].setAttribute("id",val);
-        var tmp = document.getElementsByClassName("perfect-body-bg") ;
-        var val="perfect-bg-animation";
-        tmp[0].setAttribute("id",val);
-        anime.classList.remove("hidden");
+
+        var perfectBg = document.getElementById("perfect-animation");
+        perfectBg.style.display;
+        perfectBg.style.display = "block";
+
+        var perfectBgColor = document.querySelector(".perfect-body-bg");
+        perfectBgColor.style.backgroundColor;
+        perfectBgColor.style.backgroundColor = "#ffda48";
+
+        var normalBg = document.getElementById("normal-animation");
+        var normalBgT = document.getElementById("normal-animation-tablet");
+        var normalBgM = document.getElementById("normal-animation-mobile");
+        normalBg.style.display;
+        normalBgT.style.display;
+        normalBgM.style.display;
+        normalBg.style.display = "none";
+        normalBgT.style.display = "none";
+        normalBgM.style.display = "none";
+
+        goNext.innerText="Go The Last Level!!";
+        goNext.href = "index_expart.html";
       }else{
         return;
       }

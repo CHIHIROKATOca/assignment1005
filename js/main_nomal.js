@@ -1,21 +1,24 @@
 "use strict";
 
 {
-    const question = document.getElementById("question");
-    const choices = document.getElementById("choices");
-    const btn = document.getElementById("btn");
-    const result = document.getElementById("result");
-    const scorelabel = document.querySelector("#result > p");
-    const anime = document.getElementById("anime");
-    const count = document.getElementById("count");
+  const question = document.getElementById("question");
+  const choices = document.getElementById("choices");
+  const btn = document.getElementById("btn");
+  const result = document.getElementById("result");
+  const scorelabel = document.querySelector("#result-score");
+  const anime = document.getElementById("anime");
+  const count = document.getElementById("count");
+  const goNext = document.getElementById("replay");
 
-    const quizSet =shuffle([
-        {q: "What is a Ninja?" , c : ["A person who covert agent or mercenary in feudal Japan","A person who can find onsen","A person who most famous dancer in Japan"]},
-        {q: "We all know Tokyo’s the largest city in terms of population, but where is the second biggest?" , c : ["Yokohama","Osaka","Kyoto"]},
-        {q: 'How tall is the iconic Mount Fuji?' , c : ["3776m","4776m","2776m"]},
-        {q: "What is “Nice to Meet You!” in Japanese?" , c : ["Konnichiwa!","Sayounara!","Arigato!"]},
-        {q: "What is the main island of Japan called?" , c : ["Honsyu","Kyusyu","Okinawa"]},
-    ]);
+
+  const quizSet =shuffle([
+    {q: '"Ukeireyo..."' , c : ["Accept it","Don't be afraid","I mean"]},
+    {q: '"Tokesouda..."', c : ["I feel like melt","I feel like lose","I feel like jump"]},
+    {q: '"Ouyo"' , c : ["I will follow you","I will kill you","I will hide"]},
+    {q: '"Ano...Gomen nasai!"', c : ["Uh...I am sorry!","Uh...I wanna cry!","Uh...See you tomorrow!"]},
+    {q: '"Tatakaitaku nainoni!"' , c : ["I don't wanna fight!","I don't wanna lose!","I don't wanna see!"]},
+
+]);
     let currentNum = 0;
     let isAnswered;
     let score = 0;
@@ -79,16 +82,16 @@
     setQuiz();
 
     function countNum(){
-      count.textContent = `Question: 1 / ${quizSet.length}`;
+      count.textContent = `What does it mean?: 1 / ${quizSet.length}`;
     }
     countNum();
 
     btn.addEventListener("click", ()=>{
       function countNum(){
       if(btn.classList.contains("disabled")){
-      count.textContent = `Question: ${currentNum + 1} / ${quizSet.length}`;
+      count.textContent = `What does it mean?: ${currentNum + 1} / ${quizSet.length}`;
       }else{
-        count.textContent = `Question: ${currentNum + 2} / ${quizSet.length}`;
+        count.textContent = `What does it mean?: ${currentNum + 2} / ${quizSet.length}`;
       }
       }
       countNum();
@@ -108,14 +111,36 @@
       }
 
       if(score === quizSet.length){
-       var tmp = document.getElementsByClassName("perfect-bg") ;
+        const perfectText = document.getElementById("perfectText");
+        perfectText.textContent = "Perfect!!";
+
+        var tmp = document.getElementsByClassName("perfect-bg") ;
         var val="perfect";
         tmp[0].setAttribute("id",val);
-        var tmp = document.getElementsByClassName("perfect-body-bg") ;
-        var val="perfect-bg-animation";
-        tmp[0].setAttribute("id",val);
-        anime.classList.remove("hidden");
-      }else{
+
+        var perfectBg = document.getElementById("perfect-animation");
+        perfectBg.style.display;
+        perfectBg.style.display = "block";
+
+        var perfectBgColor = document.querySelector(".perfect-body-bg");
+        perfectBgColor.style.backgroundColor;
+        perfectBgColor.style.backgroundColor = "#ffda48";
+
+        var normalBg = document.getElementById("normal-animation");
+        var normalBgT = document.getElementById("normal-animation-tablet");
+        var normalBgM = document.getElementById("normal-animation-mobile");
+        normalBg.style.display;
+        normalBgT.style.display;
+        normalBgM.style.display;
+        normalBg.style.display = "none";
+        normalBgT.style.display = "none";
+        normalBgM.style.display = "none";
+
+
+
+        goNext.innerText="Go Next Level";
+        goNext.href = "index_hard.html";
+      }else{d
         return;
       }
 

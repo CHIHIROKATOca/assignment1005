@@ -5,17 +5,18 @@
     const choices = document.getElementById("choices");
     const btn = document.getElementById("btn");
     const result = document.getElementById("result");
-    const scorelabel = document.querySelector("#result > p");
+    const scorelabel = document.querySelector("#result-score");
     const anime = document.getElementById("anime");
     const count = document.getElementById("count");
+    const goNext = document.getElementById("replay");
 
     const quizSet =shuffle([
-        {q: "Which of these cities is the capital of Japan?" , c : ["Tokyo","Osaka","Hokkaido"]},
-        {q: 'Which is the official language of Japan?' , c : ["Japanese","English","Chinese"]},
-        {q: "What is the highest point in Japan?" , c : ["Mount Fuji","Mount Kilimanjaro","Mount Takao"]},
-        {q: "What's the traditional soup of Japan?" , c : ["Miso soup","Samgyetang","Tom yum goong"]},
-        {q: "Which is a traditional Japanese dress?" , c : ["Kimono","Sari","Ao dai"]},
-    ]);
+      {q: '"Ohayo"', c : ["Good morning","Good evening","Good night"]},
+      {q: '"Arigatou"' , c : ["Thank you","I love you","I'm sorry"]},
+      {q: '"Konnichiwa"', c : ["Hello","Yummy","Fun"]},
+      {q: '"Sayounara"' , c : ["Good bye","I am happy","I am sad"]},
+      {q: '"Samurai"' , c : ["The warrior of Japan","The spy of Japan","The stagehands in  Japanese theatre"]},
+  ]);
     let currentNum = 0;
     let isAnswered;
     let score = 0;
@@ -41,8 +42,10 @@
         if (li.textContent === quizSet[currentNum].c[0]) {
           li.classList.add('correct');
           score++;
+
         } else {
           li.classList.add('wrong');
+
         }
 
         btn.classList.remove('disabled');
@@ -79,16 +82,16 @@
     setQuiz();
 
     function countNum(){
-      count.textContent = `Question: 1 / ${quizSet.length}`;
+      count.textContent = `What does it mean?: 1 / ${quizSet.length}`;
     }
     countNum();
 
     btn.addEventListener("click", ()=>{
       function countNum(){
       if(btn.classList.contains("disabled")){
-      count.textContent = `Question: ${currentNum + 1} / ${quizSet.length}`;
+      count.textContent = `What does it mean?: ${currentNum + 1} / ${quizSet.length}`;
       }else{
-        count.textContent = `Question: ${currentNum + 2} / ${quizSet.length}`;
+        count.textContent = `What does it mean?: ${currentNum + 2} / ${quizSet.length}`;
       }
       }
       countNum();
@@ -108,13 +111,34 @@
       }
 
       if(score === quizSet.length){
-       var tmp = document.getElementsByClassName("perfect-bg") ;
+        const perfectText = document.getElementById("perfectText");
+        perfectText.textContent = "Perfect!!";
+
+        var tmp = document.getElementsByClassName("perfect-bg") ;
         var val="perfect";
         tmp[0].setAttribute("id",val);
-        var tmp = document.getElementsByClassName("perfect-body-bg") ;
-        var val="perfect-bg-animation";
-        tmp[0].setAttribute("id",val);
-        anime.classList.remove("hidden");
+
+        var perfectBg = document.getElementById("perfect-animation");
+        perfectBg.style.display;
+        perfectBg.style.display = "block";
+
+        var perfectBgColor = document.querySelector(".perfect-body-bg");
+        perfectBgColor.style.backgroundColor;
+        perfectBgColor.style.backgroundColor = "#ffda48";
+
+        var normalBg = document.getElementById("normal-animation");
+        var normalBgT = document.getElementById("normal-animation-tablet");
+        var normalBgM = document.getElementById("normal-animation-mobile");
+        normalBg.style.display;
+        normalBgT.style.display;
+        normalBgM.style.display;
+        normalBg.style.display = "none";
+        normalBgT.style.display = "none";
+        normalBgM.style.display = "none";
+
+        goNext.innerText="Go Next Level";
+        goNext.href = "index_normal.html";
+
       }else{
         return;
       }

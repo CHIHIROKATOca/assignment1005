@@ -1,16 +1,7 @@
 {
 	"folders": [
 		{
-			"path": ".."
-		},
-		{
-			"path": "../../../employee-exercise"
-		},
-		{
-			"path": "../../../assignment1002"
+			"path": "."
 		}
-	],
-	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "JS"
-	}
+	]
 }
