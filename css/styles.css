@@ -593,6 +593,9 @@ border: 5px solid #fa8c8c;
             position: relative;
             text-align: center;
         }
+        #choices{
+            font-size: 12px;
+        }
 
         #question{
             font-size: 19px;
