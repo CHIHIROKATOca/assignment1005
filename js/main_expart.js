@@ -12,10 +12,10 @@
 
   const quizSet =shuffle([
     {q: '"Gohan wa nandaro na?"', c : ["I wonder what the dish is today","Would you like to play with me?","Don't you bully me?"]},
-    {q: '"Kaere...omae mijyuku sugida!"' , c : ["Go away...You're too immature!","You are strong...but I am more!","I can't belive...you are fighter!"]},
+    {q: '"Omae mijyuku sugida!"' , c : ["You're too immature!","You were lose!","I can win always!"]},
     {q: '"Washi no mai wo misete yaruwa!"', c : ["I will show you my dance!","Go to hell!","Have fun! I will show you future"]},
-    {q: '"Ore no tsuyosa wa tenkaichi!"' , c : ["I am strongest in the world!","You are the second best in the world!","let show me your skill more!"]},
-    {q: '"Ore wa mada manzoku shite naize!" mean?' , c : ["I'm still not satisfied","Show me what you can do! ","You are strong!"]},
+    {q: '"Ore no tsuyosa wa tenkaichi!"' , c : ["I am strongest in the world!","You are strong!","let show me your skill more!"]},
+    {q: '"Ore wa mada manzoku shite naize!"' , c : ["I'm still not satisfied","Show me what you can do! ","You are strong!"]},
 ]);
 
     let currentNum = 0;
